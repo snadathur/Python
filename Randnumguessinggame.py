@@ -12,7 +12,6 @@ def intro():
         quit()
 
 
-<<<<<<< HEAD
 
 def params():
     #Ask user for parameters
@@ -45,7 +44,6 @@ def main():
 
 
 main()
-=======
 intro()
 
 #Ask user for parameters
@@ -71,4 +69,4 @@ while 1 == 1:
 
 
 #   PROGRAM BY VIKRAM NADATHUR 6/11/16  
->>>>>>> origin/master
+
