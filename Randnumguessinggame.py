@@ -34,3 +34,6 @@ while 1 == 1:
     else:
         print('Guess the number')
     guess=int(input())
+
+
+#   PROGRAM BY VIKRAM NADATHUR 6/11/16  
