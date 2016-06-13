@@ -4,8 +4,8 @@ from tkinter import*
 tk=Tk()
 
 #Functions needed for program
-def create_button(button_text,button_command):
-	btn = Button(tk, text=button_text, command=button_command)
+def create_button(button_text,button_command,backgroundcolor,textcolor):
+	btn = Button(tk, text=button_text, command=button_command,)
 	btn.pack()
 
 def minnum():
@@ -28,8 +28,8 @@ minnum()
 maxnum()
 
 #Creates buttons
-create_button("Randomize",randomize)
-
+randomize=Button(tk,text="Randomize",command=randomize,bg='blue', fg='white')
+randomize.pack()
 
 
 #   PROGRAM BY VIKRAM NADATHUR 6/11/16                                            
