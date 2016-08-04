@@ -7,9 +7,11 @@ if word == 'exit':
     print('Have a good day')
     quit()
 else:
-            word=list(word)
-            print(word)
-            print('The scrambled word is ')
-            shuffle(word)
-            print(word)
+        word=list(word)
+        print(word)
+        print('The scrambled word is ')
+        shuffle(word)
+        print(word)
+        
+
 
