@@ -3,7 +3,8 @@ text = input('Enter text here: ')
 count = 0
 vowels = 0
 while(count<len(text)):
-    if(text[count] == 'a' or 'e' or 'i' or 'o' or 'u'):
+    #if(text[count] == 'a' or 'e' or 'i' or 'o' or 'u'):  alternatively if 
+    if (text[count] == 'a' or text[count] == 'e' or text[count] == 'i' or text[count] == 'o'or text[count] == 'u'):
         print('textcount is {}, vowels is {}, count is {}'.format(text[count],vowels,count))
         vowels+=1
     count+=1
