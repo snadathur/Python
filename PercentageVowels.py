@@ -1,5 +1,15 @@
-print('Enter some text')
-text = input('Enter text here: ')
+print('Would you like to enter text or open a txt file? Enter file or text !! Note at this time the file option doesnt work')
+ans = input()
+ans = ans.upper()
+if(ans[0] == 'F'):
+    print('Enter the file path')
+    path = input()
+    myfile= open(path)
+    text = myfile.read
+else:
+    print('Enter some text')
+    text = input('Enter text here: ')
+
 count = 0
 vowels = 0
 while(count<len(text)):
