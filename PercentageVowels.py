@@ -3,10 +3,23 @@ text = input('Enter text here: ')
 count = 0
 vowels = 0
 while(count<len(text)):
-    #if(text[count] == 'a' or 'e' or 'i' or 'o' or 'u'):  alternatively if 
-    if (text[count] == 'a' or text[count] == 'e' or text[count] == 'i' or text[count] == 'o'or text[count] == 'u'):
-        print('textcount is {}, vowels is {}, count is {}'.format(text[count],vowels,count))
+    print('textcount is {}, vowels is {}, count is {}'.format(text[count],vowels,count))
+    if(text[count] == 'a'):
+        print('You have entered the fist if statement')
         vowels+=1
+    elif(text[count] == 'e'):
+        print('You have entered the second if statement')
+        vowels+=1
+    elif(text[vowels] == 'i'):
+        print('You have entered the third if statement')
+        vowels+=1
+    elif(text[vowels] == 'o'):
+        print('You have entered the fourth if statement')
+        vowels+=1
+    elif(text[vowels] == 'u'):
+        print('You have entered the fifth if statement')
+        vowels+=1
+
     count+=1
     
 percentvowels = (vowels/len(text))*100
@@ -43,6 +56,6 @@ if(ans[0] == 'Y'):
     percentleto = 100*(leto/len(text))
     percentletu = 100*(letu/len(text))
 
-    print("The text contains {:0.2f}% vowels, {:0.2f}% consonants, {:0.2f}% the letter a, {:0.2f}% the letter e, {:0.2f}% the letter i{:0.2f}% the letter o, {:0.2f}% the letter u.".format(percentvowels,percentconsonants,percentleta,percentlete,percentleti,percentleto,percentletu))
+    print("The text contains {:0.2f}% vowels, {:0.2f}% consonants, {:0.2f}% the letter a, {:0.2f}% the letter e, {:0.2f}% the letter i{:1.2f}% the letter o, {:0.2f}% the letter u.".format(percentvowels,percentconsonants,percentleta,percentlete,percentleti,percentleto,percentletu))
 else:
     quit()
