@@ -1,5 +1,9 @@
 print('Would you like to enter text or open a txt file? Enter file or text !! Note at this time the file option doesnt work')
 ans = input()
+while(ans.isalpha == False):
+    print('There was some non alphabetic charather please try again')
+    print('-' * 20)
+    ans= input
 ans = ans.upper()
 if(ans[0] == 'F'):
     print('Enter the file path')
@@ -7,27 +11,27 @@ if(ans[0] == 'F'):
     myfile= open(path)
     text = myfile.read
 else:
-    print('Enter some text')
+    print('-' * 20)
     text = input('Enter text here: ')
+    while(ans.isalpha == False):
+            print('There was some non alphabetic charather please try again')
+            print('-' * 20)
+            ans= input
 
 count = 0
 vowels = 0
+
 while(count<len(text)):
-    print('textcount is {}, vowels is {}, count is {}'.format(text[count],vowels,count))
+    
     if(text[count] == 'a'):
-        print('You have entered the fist if statement')
         vowels+=1
     elif(text[count] == 'e'):
-        print('You have entered the second if statement')
         vowels+=1
-    elif(text[vowels] == 'i'):
-        print('You have entered the third if statement')
+    elif(text[count] == 'i'):
         vowels+=1
-    elif(text[vowels] == 'o'):
-        print('You have entered the fourth if statement')
+    elif(text[count] == 'o'):
         vowels+=1
-    elif(text[vowels] == 'u'):
-        print('You have entered the fifth if statement')
+    elif(text[count] == 'u'):
         vowels+=1
 
     count+=1
@@ -66,6 +70,6 @@ if(ans[0] == 'Y'):
     percentleto = 100*(leto/len(text))
     percentletu = 100*(letu/len(text))
 
-    print("The text contains {:0.2f}% vowels, {:0.2f}% consonants, {:0.2f}% the letter a, {:0.2f}% the letter e, {:0.2f}% the letter i{:1.2f}% the letter o, {:0.2f}% the letter u.".format(percentvowels,percentconsonants,percentleta,percentlete,percentleti,percentleto,percentletu))
+    print("The text contains {:0.2f}% vowels, {:0.2f}% consonants, {:0.2f}% the letter a, {:0.2f}% the letter e, {:0.2f}% the letter i{:5.2f}% the letter o, {:0.2f}% the letter u.".format(percentvowels,percentconsonants,percentleta,percentlete,percentleti,percentleto,percentletu))
 else:
     quit()
