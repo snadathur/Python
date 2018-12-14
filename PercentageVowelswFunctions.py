@@ -66,16 +66,60 @@ def letmoreinfo(text):
             v+=1
     print('The word contains the letter u {} times.'.format(v))
 
+def gettextfile():
+    print('Enter the path to the text file:')
+    path = input(':')
+    myfile = open(path,'r')
+    vowels = 0
+    consonants = 0
+    if(myfile.readable() == False):
+        print('There was some error with the file and it was unreadable. Please try again.')
+        gettextfile()
+    else:
+        for line in myfile:
+            currentline = line.strip()
+            currentline = line.replace(' ','')
+            tup1 = numvowelsconsonants(currentline)
+            vowels+=tup1(0)
+            consonants+=tup1(1)
+
+    return (vowels,consonants)
+
+def intro():
+    print('Would you like to enter some text or use a file? text/file')
+    ans = input()
+    ans = ans.upper()
+    for let in ans:
+        if(let.isalpha() == False):
+            print('There was some non-aplhabetic character dected, please try again.')
+            intro()
+
+    if(ans[0] == 'T'):
+        return True
+    else:
+         return False
 
 
-stuff = get_text()
-data = numvowelsconsonants(stuff)
-print("The word is {}% vowels.".format(100*(data[0]/(data[0]+data[1]))))
-if(moreinfo() == True):
-    print('data[0] is {} data[1] is {}, the sum is {}'.format(data[0],data[1],data[0]+data[1]))
-    percentv = (data[0]/(data[0]+data[1]))
-    percentc = (1-percentv)
-    print('There are {} vowels and {} consonants'.format(data[0],data[1]))
-    print('The word is {vowels}% vowels and {cons}% consonants'.format(vowels = percentv*100,cons = percentc*100))
-    letmoreinfo(stuff)
+if(intro() == True):
+    stuff = get_text()
+    data = numvowelsconsonants(stuff)
+    print("The word is {}% vowels.".format(100*(data[0]/(data[0]+data[1]))))
+    if(moreinfo() == True):
+        print('data[0] is {} data[1] is {}, the sum is {}'.format(data[0],data[1],data[0]+data[1]))
+        percentv = (data[0]/(data[0]+data[1]))
+        percentc = (1-percentv)
+        print('There are {} vowels and {} consonants'.format(data[0],data[1]))
+        print('The word is {vowels}% vowels and {cons}% consonants'.format(vowels = percentv*100,cons = percentc*100))
+        letmoreinfo(stuff)
+        
+elif(intro == False):
+   data = gettextfile()
+   print("The word is {}% vowels.".format(100*(data[0]/(data[0]+data[1]))))
+   if(moreinfo() == True):
+        print('data[0] is {} data[1] is {}, the sum is {}'.format(data[0],data[1],data[0]+data[1]))
+        percentv = (data[0]/(data[0]+data[1]))
+        percentc = (1-percentv)
+        print('There are {} vowels and {} consonants'.format(data[0],data[1]))
+        print('The word is {vowels}% vowels and {cons}% consonants'.format(vowels = percentv*100,cons = percentc*100))
+        letmoreinfo(stuff)
 
