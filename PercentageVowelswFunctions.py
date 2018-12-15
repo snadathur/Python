@@ -10,6 +10,11 @@ def numvowelsconsonants(text):
             return(-1,-1)
         else:
             if(let == 'a' or let == 'e' or let == 'i' or let == 'o' or let == 'u'):
+                # alternatively, you can create a tuple  vowels = ('a', 'e', 'i', 'o' , 'u')
+                # then you can check 
+                #  if let in vowels :
+                #      do something...
+                # the in statement will work for lists, tuples and sets
                 vowels+=1
             else:
                 consonants+=1
@@ -23,8 +28,10 @@ def get_text():
         if(letter.isalpha() == False):
             print('There was an error try again')
             get_text()
+            # we have not exited the original loop.  Try to test this function by itself.
     return ans
 
+# Add documentation for this function, and test it by itself. pytest is best for this kind of things.
 def moreinfo():
     print('''Would you like more info?
     Y/N''')
@@ -32,7 +39,8 @@ def moreinfo():
     for let in ans:
         if(let.isalpha() == False):
             print('One of the characthers was dected as non-alphabetic. Please try again')
-            moreinfo()
+            # isalpha returns true if char is alphanumeric.
+            moreinfo()  # this is recursion. calling function from inside itself. 
         else:
             continue
     ans = ans.upper()
@@ -109,6 +117,7 @@ if(intro() == True):
     stuff = get_text()
     data = numvowelsconsonants(stuff)
     print("The word is {}% vowels.".format(100*(data[0]/(data[0]+data[1]))))
+    # comment everything till here and get it to work from here.
     if(moreinfo() == True):
         print('data[0] is {} data[1] is {}, the sum is {}'.format(data[0],data[1],data[0]+data[1]))
         percentv = (data[0]/(data[0]+data[1]))
