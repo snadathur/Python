@@ -80,8 +80,8 @@ def gettextfile():
             currentline = line.strip()
             currentline = line.replace(' ','')
             tup1 = numvowelsconsonants(currentline)
-            vowels+=tup1(0)
-            consonants+=tup1(1)
+            vowels+=tup1[0]
+            consonants+=tup1[1]
 
     return (vowels,consonants)
 
@@ -95,9 +95,14 @@ def intro():
             intro()
 
     if(ans[0] == 'T'):
+        print('true')
         return True
+    elif(ans[0] == 'F'):
+        print('false')
+        return False
     else:
-         return False
+        print('none')
+        return None
 
 
 if(intro() == True):
@@ -112,7 +117,7 @@ if(intro() == True):
         print('The word is {vowels}% vowels and {cons}% consonants'.format(vowels = percentv*100,cons = percentc*100))
         letmoreinfo(stuff)
         
-elif(intro == False):
+elif(intro() == False):
    data = gettextfile()
    print("The word is {}% vowels.".format(100*(data[0]/(data[0]+data[1]))))
    if(moreinfo() == True):
