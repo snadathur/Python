@@ -1,11 +1,39 @@
-print('Enter some text')
-text = input('Enter text here: ')
+print('Would you like to enter text or open a txt file? Enter file or text !! Note at this time the file option doesnt work')
+ans = input()
+while(ans.isalpha == False):
+    print('There was some non alphabetic charather please try again')
+    print('-' * 20)
+    ans= input
+ans = ans.upper()
+if(ans[0] == 'F'):
+    print('Enter the file path')
+    path = input()
+    myfile= open(path)
+    text = myfile.read
+else:
+    print('-' * 20)
+    text = input('Enter text here: ')
+    while(ans.isalpha == False):
+            print('There was some non alphabetic charather please try again')
+            print('-' * 20)
+            ans= input
+
 count = 0
 vowels = 0
+
 while(count<len(text)):
-    if(text[count] == 'a' or 'e' or 'i' or 'o' or 'u'):
-        print('textcount is {}, vowels is {}, count is {}'.format(text[count],vowels,count))
+    
+    if(text[count] == 'a'):
         vowels+=1
+    elif(text[count] == 'e'):
+        vowels+=1
+    elif(text[count] == 'i'):
+        vowels+=1
+    elif(text[count] == 'o'):
+        vowels+=1
+    elif(text[count] == 'u'):
+        vowels+=1
+
     count+=1
     
 percentvowels = (vowels/len(text))*100
@@ -42,6 +70,6 @@ if(ans[0] == 'Y'):
     percentleto = 100*(leto/len(text))
     percentletu = 100*(letu/len(text))
 
-    print("The text contains {:0.2f}% vowels, {:0.2f}% consonants, {:0.2f}% the letter a, {:0.2f}% the letter e, {:0.2f}% the letter i{:0.2f}% the letter o, {:0.2f}% the letter u.".format(percentvowels,percentconsonants,percentleta,percentlete,percentleti,percentleto,percentletu))
+    print("The text contains {:0.2f}% vowels, {:0.2f}% consonants, {:0.2f}% the letter a, {:0.2f}% the letter e, {:0.2f}% the letter i{:5.2f}% the letter o, {:0.2f}% the letter u.".format(percentvowels,percentconsonants,percentleta,percentlete,percentleti,percentleto,percentletu))
 else:
     quit()
